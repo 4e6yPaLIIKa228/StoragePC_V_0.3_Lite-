@@ -1,0 +1,38 @@
+﻿<Window x:Class="StoragePC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StoragePC"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Приложение для учета компьютеров и периферийной техники" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="700" MinWidth="1000">
+    
+    <Grid Background="#0e0e0f">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="500" Color="Blue" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <Grid Margin="0 0 0 20">
+                    <TextBlock Text="Здравствуйте!" FontSize="30" FontWeight="Bold" Margin="0,0,280,20" />
+                    <Image Source="Resources/logo_2020_250.jpg" Height="61" Margin="379,0,0,0" />
+                </Grid>
+
+                <Grid Margin="0 0 0 20">
+                    <Button x:Name="Bt_Reg" HorizontalAlignment="Left" Content="Регистрация"  Style="{StaticResource MaterialDesignFlatButton}" Click="Bt_Reg_Click" ></Button>
+                    <Button x:Name="BtLog" HorizontalAlignment="Right" Content="Войти"  Style="{StaticResource MaterialDesignFlatButton }" Click="BtLog_Click"></Button>
+                    <Button x:Name="test1" HorizontalAlignment="Right" Content="Войти"  Style="{StaticResource MaterialDesignFlatButton}" Click="test1_Click" Margin="0,0,98,0"/>
+                </Grid>
+                <TextBox x:Name="Tx_Log" materialDesign:HintAssist.Hint="Ведите логин"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <PasswordBox x:Name="PassBx" materialDesign:HintAssist.Hint="Ведите Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"></PasswordBox>
+                <Grid  Margin="0 10 0 0">
+                   <Button x:Name="BtClose" HorizontalAlignment="Left" Content="Выйти"  Style="{StaticResource MaterialDesignFlatButton }" Click="BtClose_Click"></Button> 
+                </Grid>
+                
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
