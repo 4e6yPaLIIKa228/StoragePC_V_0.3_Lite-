@@ -6,10 +6,10 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:StoragePC"
         mc:Ignorable="d"
-        Title="Test1" Height="450" Width="575">
+        Title="Test1" Height="650" Width="875">
 
     <Grid Background="#0e0e0f">
-        <Border  Margin="15" Background="White" VerticalAlignment="Center" Padding="30" CornerRadius="20">
+        <Border  Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="600" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="500" Color="Blue" ShadowDepth="0"></DropShadowEffect>
             </Border.Effect>
@@ -17,10 +17,10 @@
                 <Grid Height="200">
                         <DataGrid  x:Name="DeviceGrid"   AutoGenerateColumns="False" ColumnWidth="50" ItemsSource="{Binding}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Название" Binding="{Binding Path=Number}" Width="120" />
-                                <DataGridTextColumn Header="Номер" Binding="{Binding Path=Description}" Width="120" />
-                                <DataGridTextColumn Header="Тип" Binding="{Binding Path=Type}"  Width="110" />
-                                <DataGridTextColumn Header="Кабинет"  Binding="{Binding Path=Kabunet}" Width="110" />
+                            <DataGridTextColumn Header="Название" Binding="{Binding Path=Description}" Width="150" />
+                            <DataGridTextColumn Header="Номер" Binding="{Binding Path=Number}" Width="120" />
+                                <DataGridTextColumn Header="Тип" Binding="{Binding Path=Type}"  Width="120" />
+                            <DataGridTextColumn Header="Кабинет"  Binding="{Binding Path=Kabunet}" Width="100" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>

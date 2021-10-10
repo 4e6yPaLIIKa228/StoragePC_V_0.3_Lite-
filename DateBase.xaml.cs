@@ -29,9 +29,21 @@ namespace StoragePC
             }
 
             private void Accept_Click(object sender, RoutedEventArgs e)
+    {  
+            if (String.IsNullOrEmpty(TexBxName.Text) || String.IsNullOrEmpty(TexBxNumber.Text) || String.IsNullOrEmpty(TexBxtype.Text) || String.IsNullOrEmpty(TexBxKab.Text)) //Проверка,если ничего не ввели
+            {
+                MessageBox.Show("Заполните все поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
             {
                 this.DialogResult = true;
             }
+    }
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХФЫВАПРОЛДЖЭЯЧСМИТБЮ".IndexOf(e.Text) < 0; //Только буквы(очень спорно)
+        }
     }
 
 }

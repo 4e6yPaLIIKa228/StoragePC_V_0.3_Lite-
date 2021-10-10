@@ -43,13 +43,33 @@ namespace StoragePC
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             DateBase f = new DateBase(new Device());
-            if (f.ShowDialog() == true)
+            if(f.ShowDialog() == true)
             {
                 Device device = f.Device;
                 db.Devices.Add(device);
                 db.SaveChanges();
                 Reload();
             }
+            else
+            {
+                try
+                {
+                    Device device = f.Device;
+                    db.Devices.Add(device);
+                    db.SaveChanges();
+                    Reload();
+                }
+                catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                {
+                    Device device = f.Device;
+                    db.Devices.Remove(device);
+                    db.SaveChanges();
+                    MessageBox.Show("Работает?");
+                    return;
+                }
+            }
+            
+
         }
         // редактирование
         private void Edit_Click(object sender, RoutedEventArgs e)

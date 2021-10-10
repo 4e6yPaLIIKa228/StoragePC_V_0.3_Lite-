@@ -6,8 +6,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:StoragePC"
         mc:Ignorable="d"
-        Title="DateBase" Height="300" Width="300"
-        WindowStartupLocation="CenterScreen"
+        Title="DateBase" Height="300" Width="300" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None"
         MinHeight="200" MinWidth="350">
     <Window.Resources>
         <Style TargetType="TextBlock">
@@ -29,15 +30,15 @@
             <ColumnDefinition Width="150" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Название" />
-        <TextBlock Text="Номер" Grid.Row="1" />
-        <TextBlock Text="Тип" Grid.Row="2" />
-        <TextBlock Text="Кабинет" Grid.Row="3" />
+        <TextBlock Text="Название" VerticalAlignment="Bottom" />
+        <TextBlock Text="Номер"  VerticalAlignment="Bottom" Grid.Row="1" />
+        <TextBlock Text="Тип"  VerticalAlignment="Bottom" Grid.Row="2" />
+        <TextBlock Text="Кабинет"  VerticalAlignment="Bottom" Grid.Row="3" />
 
-        <TextBox Style="{StaticResource MaterialDesignTextBox}" Text="{Binding Description}" Grid.Column="1" />
-        <TextBox Text="{Binding Number}" Grid.Column="1" Grid.Row="1" />
-        <TextBox Text="{Binding Type}" Grid.Column="1" Grid.Row="2" />
-        <TextBox Text="{Binding Kabunet}" Grid.Column="1" Grid.Row="3" />
+        <TextBox x:Name="TexBxName" Style="{StaticResource MaterialDesignTextBox}" Text="{Binding Description}" VerticalContentAlignment = "Bottom" Grid.Column="1" />
+        <TextBox x:Name="TexBxNumber" Style="{StaticResource MaterialDesignTextBox}" Text="{Binding Number}" VerticalContentAlignment = "Bottom" Grid.Column="1" Grid.Row="1" />
+        <TextBox x:Name="TexBxtype"  Style="{StaticResource MaterialDesignTextBox}" Text="{Binding Type}" VerticalContentAlignment = "Bottom" Grid.Column="1" Grid.Row="2" PreviewTextInput="TextBox_PreviewTextInput" />
+        <TextBox x:Name="TexBxKab" Style="{StaticResource MaterialDesignTextBox}"  Text="{Binding Kabunet}" VerticalContentAlignment = "Bottom"  Grid.Column="1" Grid.Row="3" />
  
 
 
